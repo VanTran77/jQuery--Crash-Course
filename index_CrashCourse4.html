@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>jQuery Crash Course 4 - Effects & Animation</title>
+</head>
+<body>
+   
+    <div id="container">
+        <button id="btnFadeOut">Fade Out</button>
+        <button id="btnFadeIn">Fade In</button>
+        <button id="btnFadeTog">Fade Toggle</button>
+        <br>
+        <br>
+        <button id="btnSlideUp">Slide Up</button>
+        <button id="btnSlideDown">Slide Down</button>
+        <button id="btnSlideTog">Slide Toggle</button>
+        <button id="btnStop">Stop</button>
+        <br>
+        <br>
+        <div id="img"><img src="./images/holland.jpg" alt="image" width="300px" height="200px"></div>
+        <hr>
+        <button id="btnMoveLeft">Move left</button>
+        <button id="btnMoveRight">Move right</button>
+        <button id="btnMoveAround">Move around</button>
+        <div id="box2"></div>
+    </div>
+   
+   <script>
+    $(document).ready(function(){
+       
+        $('#btnMoveRight').click(function(){
+            $('#box2').animate({
+                left:500,
+                height:'300px',
+                width: '300px',
+                opacity: '0.5'
+            });
+        })
+        $('#btnMoveLeft').click(function(){
+            $('#box2').animate({
+                left:0,
+                height:'100px',
+                width: '100px',
+                opacity: '1'
+            });
+        })
+        $('#btnMoveAround').click(function(){
+            var box = $('#box2');
+            box.animate({
+                left:300,
+            });
+            box.animate({
+                top:300,
+            });
+            box.animate({
+                left:0,
+                top:300,
+            });
+            box.animate({
+                left:0,
+                top:0
+            });
+        })
+        
+       
+       
+        $('#btnFadeOut').click(function(){
+            // $('#img').fadeOut();
+            $('#img').fadeOut(3000, function(){
+                $('#btnFadeOut').text('It is done.');
+            } );
+        });
+        $('#btnFadeIn').click(function(){
+            $('#img').fadeIn(2000);
+        });
+        $('#btnFadeTog').click(function(){
+            $('#img').fadeToggle();
+        });
+        
+        $('#btnSlideUp').click(function(){
+            $('#img').slideUp(3000);
+        });
+        $('#btnSlideDown').click(function(){
+            $('#img').slideDown(3000);
+        });
+        $('#btnSlideTog').click(function(){
+            $('#img').slideToggle(3000);
+        });
+        $('#btnStop').click(function(){
+            $('#img').stop();
+        })
+    })
+  </script>
+   
+
+    <script src="./main.js"></script>
+</body>
+</html>

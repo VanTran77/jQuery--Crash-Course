@@ -1,0 +1,11 @@
+.myClass{
+    color: red;
+    background-color: yellow;
+}
+#box2{
+    background-color: yellowgreen;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    position: relative;
+}

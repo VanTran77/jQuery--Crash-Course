@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>jQuery Crash Course 3 - DOM Manipulation</title>
+</head>
+<body>
+   
+    <div id="container">
+        <button id="btn1">Button 1</button>
+        <p class="para1">This is a paragraph 1</p>
+        <p class="para2">This is a paragraph 2</p>
+        <p class="para3">This is a paragraph 3</p>
+        
+        <div id="myDiv">
+            <input type="text" id="newItem">
+        </div>
+
+        <ul id="list">
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+        </ul>
+        <a href="http://google.com">Google</a>
+
+        <ul id="users"></ul>
+    </div>
+   
+   <script>
+    $(document).ready(function(){
+       
+        var newArr = $('ul#list li').toArray();
+        // console.log(newArr);
+        $.each(newArr, function(i, val){
+            console.log(val.innerHTML);
+        })
+        /*    var userList = ["John", "Brad", "Mike", "Leon"];
+        $.each(userList, function(i, val){
+            $('#users').append('<li>'+val+'</li>')
+        }) */
+
+      
+     /*   $('#newItem').keyup(function(e){
+            var code = e.which;
+            if (code == 13){ // 13 is enter keycode.
+                e.preventDefault();
+                $('ul').append('<li>'+e.target.value+'</li>');
+            }
+        }) */
+       
+        // $('p').wrap('<h1>'); // change paragraph to h1 <h1><p></p><h1>, <h1><p></p><h1>
+        // $('p').wrapAll('<h1>'); // change paragraph to h1 <h1><p></p>, <p></p>, .. <h1>
+        
+    /*    $('ul').append('<li>Append List Item</li>')
+        $('ul').prepend('<li>Prepend List Item</li>')
+
+        $('.para1').appendTo('.para3'); //move to after para3
+        $('.para1').prependTo('.para2'); // move to before para2
+
+        $('ul').before('<h2> Insert before ul </h2>');
+        $('ul').after('<h2> Insert before ul <h2>');
+        $('ul').empty();
+        $('ul').detach();
+        $('a').attr('target', '_blank');
+        $('a').removeAttr('target');  */
+
+       
+     /* $('p.para1').css({"color":"white", "background":"gray", "font-weight":"bold"});
+        $('p.para2').css({color:'blue', background:'lightgreen'});
+        // $('p.para3').addClass('myClass');
+        // $('p.para3').removeClass('myClass');
+        $('#btn1').click(function(){
+            $('p.para3').toggleClass('myClass');
+        })
+        // $('#myDiv').text('Hello World');
+        $('#myDiv').html('<h1>Hello World</h1>');
+        // alert($('#myDiv').text()) */
+    })
+  </script>
+   
+
+    <script src="./main.js"></script>
+</body>
+</html>

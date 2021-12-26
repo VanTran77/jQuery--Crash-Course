@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+    <title>jQuery Crash Course 2</title>
+</head>
+<body>
+    <h1 id="heading1">Mouse Events</h1>
+   <div id="container">
+     <button id="btn1" class="btnClass">Button 1</button>
+     <button id="btn2">Button 2</button>
+   </div>
+
+   <div id="container">
+    <p id="para1">History of <span>fashion design refers specifically to </span>the development of the purpose and intention behind garments, shoes and accessories, and their design and construction. The modern industry, based around firms or fashion houses run by individual designers, started in the 19th century with Charles Frederick Worth who, beginning in 1858, was the first designer to have his label sewn into the garments he created.</p>
+    <!-- <h1 class="heading2">Heading Two</h1>
+    <p class="para2"><span>History of fashion design refers specifically</span> to the development of the purpose and intention behind garments, shoes and accessories, and their design and construction. The modern industry, based around firms or fashion houses run by individual designers, started in the 19th century with Charles Frederick Worth who, beginning in 1858, was the first designer to have his label sewn into the garments he created.</p> -->
+</div>
+    <!-- <h1 id="coords">Coords: </h1> -->
+    <hr>
+
+    <form id="formSubmit">
+        <label>Name</label><br>
+        <input type="text" id="name" name="name">
+        <br>
+
+        <label>Email</label>
+        <br>
+        <input type="email" id="email" name="email">
+        <br>
+        <label>Gender</label>
+        <br>
+        <select id="gender" name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+
+    </form>
+   
+   <script>
+    $(document).ready(function(){
+       
+        $('#formSubmit').submit(function(e){
+            e.preventDefault();
+            var name = $('input#name').val();
+            var email = $('input#email').val();
+            var gen = $('select#gender').val();
+            // console.log(gen);
+            console.log(`${name} - ${email} - ${gen}`);
+        })
+
+        // $('select#gender').change(function(e){
+        //     alert(e.target.value);
+        // });
+
+        // $('input').keyup(function(e){
+        //     console.log(e.target.value);
+        // })
+      
+        /* $('input').focus(function(){
+            // alert('Focus');
+            // $('input#name').css('background-color', 'lightyellow');
+            // $('input#email').css('background-color', 'lightblue');
+            $(this).css('background-color','lightblue');
+        });
+        $('input').blur(function(){
+            $(this).css('background-color','white');
+        }); */
+
+
+        // $('#btn1').on('mousemove', function(e){
+        //     $('#coords').html(`Coords: Y: ${e.clientY} X: ${e.clientX}`);
+        // });
+        // $(document).on('mousemove', function(e){
+        //     $('#coords').html(`Coords: Y: ${e.clientY} X: ${e.clientX}`);
+        // });
+
+        // $('#btn1').click(function(e){
+        //     // alert(e.currentTarget.id);
+        //     // alert(e.currentTarget.innerHTML);
+        //     // alert(e.currentTarget.outerHTML);
+        //     alert(e.currentTarget.className);
+
+        // })
+
+        // $('#btn1').on('mousemove', function(){
+        //     $('#para1').toggle();
+        // })
+        // $('#btn1').on('click', function(){
+        //     $('#para1').hide();
+        // })
+        // $('#btn2').on('click', function(){
+        //     $('#para1').show();
+        // })
+        // // $('#btn1').on('click', function(){
+        //     $('#para1').toggle();
+        // })
+        // $('#btn1').on('dblclick', function(){
+        //     $('#para1').toggle();
+        // })
+        // $('#btn1').hover(function(){
+        //     $('#para1').toggle();
+        // })
+        // $('#btn1').on('mouseenter', function(){
+        //     $('#para1').toggle();
+        // })
+        //         $('#btn1').on('mouseleave', function(){
+        //     $('#para1').toggle();
+        // })
+        // $('#btn1').on('mousemove', function(){
+        //     $('#para1').toggle();
+        // })
+        // $('#btn1').on('mouseup', function(){
+        //     $('#para1').toggle();
+        // })
+        // $('#btn1').on('mousedown', function(){
+        //     $('#para1').toggle();
+        // })
+
+
+
+        // $('#btn1').click(function(){
+        //     $('body').css('background-color', 'lightblue');
+        // });
+        // same above
+        // $('#btn1').on('click', function(){
+        //     // $('body').css('background-color', 'lightblue');
+        //     alert('Button Clicked !');
+        // });
+
+    })
+  </script>
+   
+
+    <script src="./main.js"></script>
+</body>
+</html>
